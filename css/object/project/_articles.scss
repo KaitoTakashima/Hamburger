@@ -1,0 +1,273 @@
+.p-search_form_keyword{
+	width:60%;
+	height:40px;
+	border-radius: 10px;
+}
+
+.p-munu{
+	 padding:20px;
+    li{
+       margin:5px auto;
+       padding:20px;
+       li{
+           background-color:rgba(250, 250, 250,.7);
+       }
+	}
+	@include breakpoint( pc ) {
+		display:flex;
+		padding:40px;
+		& .p-takeout {
+			margin-right:30px;
+		}
+	}
+
+    & .p-takeout {
+		height:642px;
+		margin-bottom:20px;
+        background-image: url("../image/Raisetech-test_contentImg2.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position:center;
+	}
+
+    & .p-eatin{
+		height:642px;
+		margin-bottom:50px;
+        background-image: url("../image/Raisetech-test_contentImg1.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position:center;
+	}
+
+    & .p-title{
+		color:#fff;
+		margin-bottom:300px;
+		@include breakpoint( pc ) {
+			margin-bottom:250px;
+		}
+		@include breakpoint( wide ) {
+			margin-bottom:200px;
+		}
+
+	}
+
+	& .p-head{
+		margin-bottom:10px;
+	}
+
+	& .p-heading{
+		font-size:20px;
+		margin-bottom:5px;
+	}
+}
+
+.p-access{
+    position:relative;
+    height:691px;
+    background-image: url("../image/front_page-GoogleMap.jpg");
+    color:rgb(94, 90, 90);
+    text-align:center;
+
+    & .p-access_heading{
+        padding:46px 93px 46px 42px;
+	}
+
+    & .p-access_text{
+        padding:20px;
+        line-height:33px;
+    }
+}
+
+.p-access::before{
+    content:'';
+    background:rgba(0,0,0,.2);
+    position: absolute;
+    top:0px;
+    left:0;
+    height:415px;
+    width:375px;
+}
+
+//ハンガーガーメニュー//
+$btnWidth: 20px;
+$btnHeight: 1px;
+
+.p-hamburger{
+    width           : 50px;
+	height          : 50px;
+	background-color: #FFF7EF;
+    position        : relative;
+    z-index:120;
+    @include breakpoint( wide ) {
+		display: none;
+    }
+    &::before,
+	&::after {
+		content   : "";
+		width     : $btnWidth;
+		height    : $btnHeight;
+		background: #FFF7EF;
+		position  : absolute;
+		left      : calc( 50% - ( #{$btnWidth} / 2 ) );
+		display   : block;
+        transition: transform 0.2s;
+    }
+    &::before {
+		top: 15px;
+    }
+    &::after {
+		top: 33px;
+    }
+    // > span {
+	// 	width          : $btnWidth;
+	// 	height         : $btnHeight;
+	// 	font-size      : 0;
+	// 	background     : linear-gradient( to right, #fff, #fff ) repeat-x #fff;
+	// 	background-size: auto $btnHeight;
+	// 	position       : absolute;
+	// 	left           : calc( 50% - ( #{$btnWidth} / 2 ) );
+	// 	top            : 48%;
+	// 	transition     : transform 0.2s;
+    // }
+    &.is-open {
+        background-color: rgba( 242, 237, 233,1);
+        &::before,
+	    &::after{
+            background: #707070;
+        }
+		&::before {
+			transform: rotate( 45deg );
+			top      : 28px;
+		}
+		&::after {
+			transform: rotate( -45deg );
+			top      : 28px;
+		}
+		> span {
+        background: none;
+        font-size:0;
+        }
+     }
+ 	}
+
+
+body.is-open {
+	position: fixed;
+}
+
+body {
+	overflow-x: hidden;
+}
+
+.wrapper{
+	@include breakpoint( wide ) {
+		right:28%;
+		position:absolute;
+
+	}
+}
+.p-gmenu{
+    height:60px;
+    color:#707070;
+    > .list {
+		transition: all 300ms 0s ease;
+		left: 100%;
+		width         : 100vw;
+		height        : 250vh;
+		padding       : 200px 50px;
+		position      : absolute;
+		top           : 0;
+		background    : rgba( 242, 237, 233, .9);
+        display       : flex;
+		flex-direction: column;
+        align-items   : center;
+		z-index       : 100;
+		overflow-y    : auto;
+		@include breakpoint( wide ) {
+			// width         : inherit;
+			// height        : inherit;
+			// padding       : inherit;
+			// position      : static;
+			// background    : inherit;
+			// flex-direction: row;
+			// transition: inherit;
+			// display:none;
+			// left:100%;
+			align-items: flex-start;
+			width:55vh;
+			height:auto;
+
+		}
+		> li {
+            margin-bottom: 40px;
+			margin-right: 340px;
+			white-space: nowrap;
+			font-size: 1.4rem;
+			&:last-child {
+				margin-bottom: 0;
+			}
+			@include breakpoint( wide ) {
+				margin-bottom: 30px;
+				font-size   : 1.2rem;
+				white-space: nowrap;
+			}
+        }
+        > ul{
+            > li{
+                margin-right:250px;
+                margin-bottom:30px;
+				font-size:1.0rem;
+				@include breakpoint( wide ) {
+					white-space: nowrap;
+					margin-left:40px;
+				}
+            }
+		}
+		> span{
+			font-size:0;
+			@include breakpoint( wide ) {
+			   font-size:30px;
+			   position:absolute;
+			   top:70px;
+			}
+		}
+	}
+
+	// > .list {
+	// 	@include breakpoint( pc ) {
+	// 		height: 600px;
+	// 		display: flex;
+	// 		align-items: center;
+    //     }
+	// 	li {
+	// 		font-size: 1.4rem;
+	// 		@include breakpoint( pc ) {
+	// 			margin-right: 20px;
+	// 			font-size   : 1.2rem;
+	// 		}
+	// 		a {
+	// 			@include breakpoint( pc ) {
+	// 				font-weight: normal;
+	// 				white-space: nowrap;
+	// 			}
+	// 		}
+    //     }
+    // }
+
+	&.is-open {
+		> .list {
+			left: 20%;
+		}
+		.c-arrow--top-l {
+			&::before {
+				display: none;
+			}
+		}
+	}
+}
+
+
+
+
+
+

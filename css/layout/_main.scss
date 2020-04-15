@@ -1,0 +1,62 @@
+.main_visual{
+      background-image:url("../image/Raisetech-test_mainImg.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position:center;
+      height:285px;
+      width:auto;
+}
+
+.archive_main_visual{
+            background-image:url("../image/Raisetech-test_archive.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position:center;
+            height:285px;
+            width:auto;
+            position:relative;
+            color:#fff;
+      & .archive_main_visual_font{
+            position:absolute;
+            top:104px;
+            left:37px;
+            font-size:3vw;
+      }
+}
+
+.archive_subheading{
+    padding:22px;
+    & .subheading{
+          margin:20px 0 ;
+    }
+}
+
+.single_main_visual_cheese{
+      background-image:url("../image/Raisetech_single_mainImg.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position:center;
+      height:auto;
+      width:auto;
+      color:#fff;
+      text-align: center;
+      & .single_main_visual_font{
+            padding:91px;
+            font-size:5vw;
+      }
+}
+
+.page_main_visual{
+      background-image:url("../image/Raisetech-page_mainimg.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position:center;
+      height:auto;
+      width:auto;
+      color:#fff;
+      text-align: center;
+      & .page_main_visual_font{
+            padding:91px;
+            font-size:5vw;
+      }
+}

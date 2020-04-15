@@ -1,0 +1,187 @@
+.c-menu_btn{
+    border:none;
+    font-size: 20px;
+    //margin:14px 16px 0 0;
+    background-color:  #FFF7EF;
+}
+
+.c-menu_group{
+    & .c-munu{
+        margin:0 auto;
+        padding:20px;
+        margin-bottom:10px;
+        @include breakpoint( pc ) {
+            display:flex;
+        }
+    }
+    & .c-munu_image{
+        // background-image:url("../image/Raisetech-test_archive.jpg");
+        // background-repeat: no-repeat;
+        // background-size: cover;
+        // background-position:center;
+        height:auto;
+        width:100%;
+    }
+}
+ .c-menu_content{
+    background-color: #3C2B1C;
+    height:450px;
+    padding:34px 0 40px 30px;
+    color: #ffffff;
+    @include breakpoint( pc ) {
+       width:500px;
+       height:auto;
+    }
+    & .c-menu_title{
+        margin-bottom:40px;
+    }
+    & .c-menu_info{
+       font-size:$text-font-size;
+       line-height: 26px;
+       width:246px;
+       margin-bottom:100px;
+    }
+}
+.wrap_detail{
+    text-align: center;
+    & .c-menu_detail{
+        text-decoration: none;
+        font-size:16px;
+        color:#707070;
+        background-color: #ffffff;
+        padding:13px 40px;
+        border-radius: 20px;
+    }
+}
+.c-page{
+    ul{
+        display:flex;
+        justify-content:space-between;
+        margin:31px 0;
+    }
+}
+
+.c-single_heading_group{
+    padding:20px;
+    & .c-single_mainheading{
+        margin-bottom:33px;
+    }
+    & .c-single_main_text{
+        margin-bottom:39px;
+    }
+    & h3,h4,h5,h6{
+        margin-bottom: 34px;
+    }
+
+    & .c-single_quote{
+        background-color: #F5F5F5;
+        padding:30px;
+        & .c-single_blockquote{
+            margin-bottom:32px;
+        }
+    }
+}
+
+.c-singlemenu_info{
+    padding:20px;
+
+    & .c-singlemenu_mainimg{
+        width:100%;
+        margin-bottom: 30px;
+
+    }
+
+    & .c-single_description li:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+
+    & li{
+        display:flex;
+        margin-bottom:30px;
+        & p{
+            width: 50%;
+         }
+        & .c-single_description_imgblock{
+             margin-right:10px;
+        }
+        & .c-single_description_textblock{
+                margin-left:10px;
+        }
+    }
+
+    & .c-image_group{
+        @include breakpoint( pc ) {
+          .c-image_flex{
+             display:flex;
+             flex-wrap: wrap;
+             img{
+                 width:50%;
+                 padding:0 10px;
+             }
+           }
+        }
+        img{
+            height:auto;
+        }
+    }
+}
+
+.c-list_group{
+    padding:20px;
+    & .c-list_group_outer{
+        margin-bottom:60px;
+    }
+
+    & .c-list_group_inner{
+        padding:20px;
+    }
+
+    & .c-tag_group{
+        background-color: #F5F5F5;
+        & .c-tag_group_outer{
+            padding:50px;
+        }
+        & .c-tag_group_inner{
+            padding-left:20px;
+        }
+    }
+}
+
+.c-table{
+    table{
+        border-collapse: collapse;
+        width:150%;
+        margin-left:50px;
+        margin-bottom:30px;
+        & td:nth-child(1){
+           width:215px;
+        }
+        & td:nth-child(2){
+            width:500px;
+         }
+        & td{
+            border: solid 1px #707070;
+            padding:30px;
+        }
+    }
+}
+
+.single_btn{
+    padding:20px;
+
+    & .c-single_btn{
+        background-color: #F2EDE9;
+        width: 480px;
+        border-radius: 20px;
+        border:1px #707070;
+        padding:30px 0;
+        font-size: $text-font-size;
+    }
+}
+
+.bold{
+    padding:20px;
+    margin-bottom:70px;
+}
+
+

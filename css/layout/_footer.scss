@@ -1,0 +1,16 @@
+.l-footer{
+    height:150px;
+    width:100%;
+    background-color:#9D8670;
+    text-align: center;
+    @include breakpoint( wide ) {
+     width:145%;
+    }
+    & .l-footer_menu{
+        display:flex;
+        justify-content: center;
+      li{
+        margin:43px 0 39px 0;
+      }
+    }
+}

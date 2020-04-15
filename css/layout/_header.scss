@@ -1,0 +1,40 @@
+.l-header{
+   text-align: center;
+   background-color: #FFF7EF;
+   & .l-header_btn{
+      display:flex;
+      justify-content: flex-end;
+   }
+   & .l-munu_btn{
+      margin:14px 16px 0 0;
+   }
+   & .l-search_form{
+      padding-bottom:20px;
+   }
+   h1{
+       margin:29px 0 39px 16px;
+       color:#707070;
+   }
+}
+
+.flex_header{
+   @include breakpoint (wide){
+      display:flex;
+      justify-content: space-between;
+      align-items: center;
+      h1{
+         margin:0 0 30px 30px;
+      }
+      form{
+         margin-right:20px;
+         & .p-search_form_keyword{
+            width:330px;
+         }
+         & .p-search_form_submit{
+            display:inline-block;
+            width:50px;
+
+         }
+      }
+   }
+}

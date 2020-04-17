@@ -1,63 +1,5 @@
-<!DOCTYPE html>
-<html lang="jp">
+<?php get_header(); ?>  <!-- header.phpを読み込むテンプレートタグ（インクルードタグ） -->
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TestPage</title>
-
-    <link rel="stylesheet" href="css/style.css">
-</head>
-
-<body>
-    <div class="wrapper">
-        <header class="l-header">
-            <div class="l-header_btn">
-                <li class="p-gmenu">
-                    <button class="l-munu_btn c-menu_btn p-hamburger p-gmenu--bt is-hamburger">
-                        <span>Menu</span>
-                    </button>
-                    <ul class="list">
-                        <span>Menu</span>
-                        <li>バーガー</li>
-                        <ul>
-                            <li>ハンバーガー</li>
-                            <li>チーズバーガー</li>
-                            <li>テリヤキバーガー</li>
-                            <li>アボガドバーガー</li>
-                            <li>フィッシュバーガー</li>
-                            <li>ベーコンバーガー</li>
-                            <li>チキンバーガー</li>
-                        </ul>
-                        <li>サイド</li>
-                        <ul>
-                            <li>ポテト</li>
-                            <li>サラダ</li>
-                            <li>ナゲット</li>
-                            <li>コーン</li>
-                        </ul>
-                        <li>ドリンク</li>
-                        <ul>
-                            <li>コーラ</li>
-                            <li>ファンタ</li>
-                            <li>オレンジ</li>
-                            <li>アップル</li>
-                            <li>紅茶(Ice/Hot)</li>
-                            <li>コーヒー(Ice/Hot)</li>
-                        </ul>
-                    </ul>
-                </li>
-            </div>
-            <div class="flex_header">
-                <h1>Hamburger</h1>
-                <form action="#" class="l-search_form p-search_form">
-                    <label for="search" class="screen_reader_text">
-                        <input type="text" class="p-search_form_keyword" name="search" id="search">
-                        <input type="submit" class="p-search_form_submit" value="検索">
-                    </label>
-                </form>
-            </div>
-        </header>
         <article class="contents">
             <section class="archive_main_visual">
                 <div class="archive_main_visual_font">
@@ -74,91 +16,50 @@
                 </p>
             </section>
 
-
-            <div class="branch_menu">
-                <ul class="c-menu_group">
-                    <li class="c-munu">
-                        <img class="c-munu_image" src="../image/Raisetech-test_archive.jpg" alt="">
-
-                        <div class="c-menu_content">
-                            <h3 class="c-menu_title">チーズバーガー</h3>
-                            <ul>
-                                <li class="c-menu_info">
-                                    <dl>
-                                        <dt class="c-heading">小見出しが入ります</dt>
-                                        <dd class="c-text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
-                                                           テキストが入ります。テキストが入ります。
-                                        </dd>
-                                    </dl>
+                <?php
+                if( have_posts()) :
+                        while( have_posts()) :
+                                the_post(); ?>
+                    <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                        <div class="branch_menu">
+                             <ul class="c-menu_group">
+                                <li class="c-munu">
+                                     <img class="c-munu_image"  <?php the_post_thumbnail();?>>
+                                     <div class="c-menu_content">
+                                        <h3 class="c-menu_title">
+                                            <a href="<?php the_permalink(); ?>">
+                                                <?php the_title();?>
+                                            </a>
+                                        </h3>
+                                        <ul>
+                                            <li class="c-menu_info">
+                                                <dl>
+                                                    <dt class="c-heading">小見出しが入ります</dt>
+                                                    <dd class="c-text">
+                                                        <?php the_content( '' ); ?>
+                                                    </dd>
+                                                </dl>
+                                            </li>
+                                        </ul>
+                                        <div class="wrap_detail">
+                                                <a href="#" class="c-menu_detail">詳しく見る</a>
+                                        </div>
+                                     </div>
                                 </li>
-                            </ul>
-                            <div class="wrap_detail">
-                                    <a href="#" class="c-menu_detail">詳しく見る</a>
-                            </div>
+                             </ul>
                         </div>
-                    </li>
-                    <li class="c-munu">
-                        <img class="c-munu_image" src="../image/Raisetech-test_archive.jpg" alt="">
+                    </div>
 
-                        <div class="c-menu_content">
-                            <h3 class="c-menu_title">チーズバーガー</h3>
-                            <ul>
-                                <li class="c-menu_info">
-                                    <dl>
-                                        <dt class="c-heading">小見出しが入ります</dt>
-                                        <dd class="c-text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
-                                                           テキストが入ります。テキストが入ります。
-                                        </dd>
-                                    </dl>
-                                </li>
-                            </ul>
-                            <div class="wrap_detail">
-                                    <a href="#" class="c-menu_detail">詳しく見る</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="c-munu">
-                        <img class="c-munu_image" src="../image/Raisetech-test_archive.jpg" alt="">
+                <?php endwhile; else : ?>
+                    <p>表示する記事がありません</p>
+                    <?php endif; ?>
 
-                        <div class="c-menu_content">
-                            <h3 class="c-menu_title">チーズバーガー</h3>
-                            <ul>
-                                <li class="c-menu_info">
-                                    <dl>
-                                        <dt class="c-heading">小見出しが入ります</dt>
-                                        <dd class="c-text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
-                                                           テキストが入ります。テキストが入ります。
-                                        </dd>
-                                    </dl>
-                                </li>
-                            </ul>
-                            <div class="wrap_detail">
-                                    <a href="#" class="c-menu_detail">詳しく見る</a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-
-                <section class="c-page">
-                    <ul>
-                        <li class="c-page_prev">＜＜前へ</li>
-                        <li class="c-page_next">次へ＞＞</li>
+                    <?php if($wp_query->max_num_pages>1):?>
+                    <ul class="p-pagenation">
+                        <li class="prevpostslink"><?php next_posts_link('Prev');?></li>
+                        <li class="nextpostslink"><?php previous_posts_link('Next');?></li>
                     </ul>
-                </section>
-            </div>
+                    <?php endif;?>
         </article>
 
-        <footer class="l-footer">
-            <ul class="l-footer_menu">
-                <li>ショップ情報 | </li>
-                <li>ヒストリー</li>
-            </ul>
-            <address class="copyright">Copyright: RaiseTech</address>
-        </footer>
-    </div>
-
-    <script src="./js/jquery-3.4.1.min.js"></script>
-    <script src="./js/hamburger.js"></script>
-</body>
-
-</html>
+        <?php get_footer(); ?>  <!--footer.phpを読み込むテンプレートタグ（インクルードタグ） -->

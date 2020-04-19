@@ -24,7 +24,7 @@
                         <div class="branch_menu">
                              <ul class="c-menu_group">
                                 <li class="c-munu">
-                                     <img class="c-munu_image"  <?php the_post_thumbnail();?>>
+                                     <img class="c-munu_image" src = "<?php echo get_template_directory_uri(); ?>/image/burg_avocado.jpg" >
                                      <div class="c-menu_content">
                                         <h3 class="c-menu_title">
                                             <a href="<?php the_permalink(); ?>">
@@ -45,7 +45,7 @@
                                                 <a href="#" class="c-menu_detail">詳しく見る</a>
                                         </div>
                                      </div>
-                                </li>
+                        　　　　　</li>
                              </ul>
                         </div>
                     </div>
@@ -60,6 +60,7 @@
                         <li class="nextpostslink"><?php previous_posts_link('Next');?></li>
                     </ul>
                     <?php endif;?>
+
         </article>
 
         <?php get_footer(); ?>  <!--footer.phpを読み込むテンプレートタグ（インクルードタグ） -->

@@ -4,12 +4,12 @@
                 <li>ヒストリー</li> -->
                 <?php wp_nav_menu(); ?>
             </ul>
-            <address class="copyright">Copyright: RaiseTech</address>
+            <address class="copyright">&copy; <?php bloginfo( 'name' ); ?></address>
         </footer>
     </div>
-
+<!-- 
     <script src="./js/jquery-3.4.1.min.js"></script>
-    <script src="./js/hamburger.js"></script>
+    <script src="./js/hamburger.js"></script> -->
+    <?php wp_footer(); ?>
 </body>
-
 </html>

@@ -24,7 +24,8 @@
                         <div class="branch_menu">
                              <ul class="c-menu_group">
                                 <li class="c-munu">
-                                     <img class="c-munu_image" src = "<?php echo get_template_directory_uri(); ?>/image/burg_avocado.jpg" >
+                                     <!-- <img class="c-munu_image" src = "<?php echo get_template_directory_uri(); ?>/image/burg_avocado.jpg" > -->
+                                     <?php the_post_thumbnail('medium'); ?>
                                      <div class="c-menu_content">
                                         <h3 class="c-menu_title">
                                             <a href="<?php the_permalink(); ?>">

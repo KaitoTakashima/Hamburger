@@ -14,14 +14,10 @@
             display:flex;
         }
     }
-    & .c-munu_image{
-        // background-image:url("../image/Raisetech-test_archive.jpg");
-        // background-repeat: no-repeat;
-        // background-size: cover;
-        // background-position:center;
-        height:auto;
-        width:100%;
-    }
+    & img{
+            height:auto;
+            width:100%;
+        }
 }
  .c-menu_content{
     background-color: #3C2B1C;

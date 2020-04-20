@@ -180,6 +180,8 @@ a {
 .c-menu_group img {
   height: auto;
   width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .c-menu_content {

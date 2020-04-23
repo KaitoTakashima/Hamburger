@@ -1,66 +1,9 @@
-<!DOCTYPE html>
-<html lang="ja">
+<?php get_header(); ?>  <!-- header.phpを読み込むテンプレートタグ（インクルードタグ） -->
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TestPage</title>
-
-    <link rel="stylesheet" href="css/style.css">
-</head>
-
-<body>
-    <div class="wrapper">
-        <header class="l-header">
-            <div class="l-header_btn">
-                <li class="p-gmenu">
-                    <button class="l-munu_btn c-menu_btn p-hamburger p-gmenu--bt is-hamburger">
-                        <span>Menu</span>
-                    </button>
-                    <ul class="list">
-                        <li>バーガー</li>
-                          <ul>
-                              <li>ハンバーガー</li>
-                              <li>チーズバーガー</li>
-                              <li>テリヤキバーガー</li>
-                              <li>アボガドバーガー</li>
-                              <li>フィッシュバーガー</li>
-                              <li>ベーコンバーガー</li>
-                              <li>チキンバーガー</li>
-                          </ul>
-                        <li>サイド</li>
-                            <ul>
-                                <li>ポテト</li>
-                                <li>サラダ</li>
-                                <li>ナゲット</li>
-                                <li>コーン</li>
-                            </ul>
-                        <li>ドリンク</li>
-                            <ul>
-                                <li>コーラ</li>
-                                <li>ファンタ</li>
-                                <li>オレンジ</li>
-                                <li>アップル</li>
-                                <li>紅茶(Ice/Hot)</li>
-                                <li>コーヒー(Ice/Hot)</li>
-                            </ul>
-                    </ul>
-                </li>
-            </div>
-            <div class="flex_header">
-                <h1>Hamburger</h1>
-                <form action="#" class="l-search_form p-search_form">
-                    <label for="search" class="screen_reader_text">
-                        <input type="text" class="p-search_form_keyword" name="search" id="search">
-                        <input type="submit" class="p-search_form_submit" value="検索">
-                    </label>
-                </form>
-            </div>
-        </header>
         <article class="contents">
             <section class="single_main_visual_cheese">
                 <div class="single_main_visual_font">
-                    <h1>h1  チーズバーガー</h1>
+                    <h1><?php the_title(); ?></h1>
                 </div>
             </section>
 
@@ -102,17 +45,17 @@
             </section>
 
             <div class="c-singlemenu_info">
-                <img class="c-singlemenu_mainimg" src="image/Raisetech_single_contentImg1.jpg">
+                <img class="c-singlemenu_mainimg"  src="<?php echo get_template_directory_uri(); ?>/image/Raisetech_single_contentImg1.jpg">
 
                 <ul class="c-single_description">
                     <li class="c-single_description1">
-                        <p class="c-single_description_imgblock"><img class="c-singlemenu_mainimg" src="image/Raisetech_single_contentImg1.jpg"></p>
+                        <p class="c-single_description_imgblock"><img class="c-singlemenu_mainimg"  src="<?php echo get_template_directory_uri(); ?>/image/Raisetech_single_contentImg1.jpg"></p>
                         <p>テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
                             テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
                         </p>
                     </li>
                     <li class="c-single_description2">
-                        <p class="c-single_description_textblock"><img class="c-singlemenu_mainimg" src="image/Raisetech_single_contentImg1.jpg"></p>
+                        <p class="c-single_description_textblock"><img class="c-singlemenu_mainimg"  src="<?php echo get_template_directory_uri(); ?>/image/Raisetech_single_contentImg1.jpg"></p>
                         <p>テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
                             テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
                         </p>
@@ -120,17 +63,17 @@
                 </ul>
 
                 <div class="c-image_group">
-                    <img class="c-singlemenu_mainimg" style="padding:20px;" src="image/Raisetech_single_contentImg1.jpg">
+                    <img class="c-singlemenu_mainimg" style="padding:20px;"  src="<?php echo get_template_directory_uri(); ?>/image/Raisetech_single_contentImg1.jpg">
                     <div class="c-image_flex">
-                        <img class="c-singlemenu_mainimg" src="image/Raisetech_single_contentImg1.jpg">
-                        <img class="c-singlemenu_mainimg" src="image/Raisetech_single_contentImg1.jpg">
-                        <img class="c-singlemenu_mainimg" src="image/Raisetech_single_contentImg1.jpg">
-                        <img class="c-singlemenu_mainimg" src="image/Raisetech_single_contentImg1.jpg">
-                        <img class="c-singlemenu_mainimg" src="image/Raisetech_single_contentImg1.jpg">
-                        <img class="c-singlemenu_mainimg" src="image/Raisetech_single_contentImg1.jpg">
-                        <img class="c-singlemenu_mainimg" src="image/Raisetech_single_contentImg1.jpg">
-                        <img class="c-singlemenu_mainimg" src="image/Raisetech_single_contentImg1.jpg">
-                        <img class="c-singlemenu_mainimg" src="image/Raisetech_single_contentImg1.jpg">
+                        <img class="c-singlemenu_mainimg"  src="<?php echo get_template_directory_uri(); ?>/image/Raisetech_single_contentImg1.jpg">
+                        <img class="c-singlemenu_mainimg"  src="<?php echo get_template_directory_uri(); ?>/image/Raisetech_single_contentImg1.jpg">
+                        <img class="c-singlemenu_mainimg"  src="<?php echo get_template_directory_uri(); ?>/image/Raisetech_single_contentImg1.jpg">
+                        <img class="c-singlemenu_mainimg"  src="<?php echo get_template_directory_uri(); ?>/image/Raisetech_single_contentImg1.jpg">
+                        <img class="c-singlemenu_mainimg"  src="<?php echo get_template_directory_uri(); ?>/image/Raisetech_single_contentImg1.jpg">
+                        <img class="c-singlemenu_mainimg"  src="<?php echo get_template_directory_uri(); ?>/image/Raisetech_single_contentImg1.jpg">
+                        <img class="c-singlemenu_mainimg"  src="<?php echo get_template_directory_uri(); ?>/image/Raisetech_single_contentImg1.jpg">
+                        <img class="c-singlemenu_mainimg"  src="<?php echo get_template_directory_uri(); ?>/image/Raisetech_single_contentImg1.jpg">
+                        <img class="c-singlemenu_mainimg"  src="<?php echo get_template_directory_uri(); ?>/image/Raisetech_single_contentImg1.jpg">
                     </div>
                 </div>
             </div>
@@ -204,18 +147,4 @@
 
         </article>
 
-        <footer class="l-footer">
-            <ul class="l-footer_menu">
-                <li>ショップ情報 | </li>
-                <li>ヒストリー</li>
-            </ul>
-            <address class="copyright">Copyright: RaiseTech</address>
-        </footer>
-    </div>
-
-    <script src="./js/jquery-3.4.1.min.js"></script>
-    <script src="./js/hamburger.js"></script>
-
-</body>
-
-</html>
+        <?php get_footer(); ?>  <!--footer.phpを読み込むテンプレートタグ（インクルードタグ） -->

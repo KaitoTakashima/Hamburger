@@ -5,6 +5,13 @@
       background-position:center;
       height:285px;
       width:auto;
+      position:relative;
+      h2{
+            position: absolute;
+            top:45%;
+            left:15%;
+            font-size :4vw;
+      }
 }
 
 .archive_main_visual{
@@ -20,7 +27,19 @@
             position:absolute;
             top:104px;
             left:37px;
-            font-size:3vw;
+            @include breakpoint (pc){
+                  display:flex;
+                  align-items: baseline;
+                  & p{
+                        margin-left:10px;
+                  }
+            }
+            & h2{
+                  font-size:4.5vw;
+            }
+            & p{
+                  font-size:3vw;
+            }
       }
 }
 

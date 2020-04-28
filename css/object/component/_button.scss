@@ -15,14 +15,19 @@
         }
     }
     & img{
-            height:auto;
+            height:320px;
             width:100%;
             object-fit: cover;
+            @include breakpoint( pc ) {
+                height:auto;
+                width:100%;
+                object-fit: cover;
+            }
         }
 }
  .c-menu_content{
     background-color: #3C2B1C;
-    height:450px;
+    height:380px;
     padding:34px 0 40px 30px;
     color: #ffffff;
     @include breakpoint( pc ) {
@@ -36,7 +41,7 @@
        font-size:$text-font-size;
        line-height: 26px;
        width:246px;
-       margin-bottom:100px;
+       margin-bottom:50px;
     }
 }
 .wrap_detail{

@@ -5,11 +5,9 @@
                 <h2>ダミーサイト</h2>
             </section>
 
- 
-
             <div class="branch_menu">
                 <ul class="p-munu">
-                   <a href = "<?php echo get_category_link(2); ?>">
+                   <a href = "<?php echo get_category_link( 5 ); ?>">
                         <li class="p-takeout">
                             <h2 class="p-title">Take Out</h2>
                             <ul>
@@ -27,7 +25,8 @@
                                 </li>
                             </ul>
                         </li>
-                    </a> 
+                    </a>
+                    <a href = "<?php echo get_category_link( 6 ); ?>">
                     <li class="p-eatin">
                         <h2 class="p-title">Eat In</h2>
                         <ul>
@@ -45,6 +44,7 @@
                             </li>
                         </ul>
                     </li>
+                    </a>
                 </ul>
 
                 <section class="p-access">

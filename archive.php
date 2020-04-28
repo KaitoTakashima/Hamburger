@@ -4,7 +4,7 @@
             <section class="archive_main_visual">
                 <div class="archive_main_visual_font">
                     <h2>Menu:</h2>
-                    <p>チーズバーガー</p>
+                    <p><?php single_cat_title(); ?></p>
                 </div>
             </section>
 
@@ -18,13 +18,13 @@
 
                 <?php
                 if( have_posts()) :
+                    query_posts($query_string . "&order=ASC");
                         while( have_posts()) :
                                 the_post(); ?>
                     <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                         <div class="branch_menu">
                              <ul class="c-menu_group">
                                 <li class="c-munu">
-                                     <!-- <img class="c-munu_image" src = "<?php echo get_template_directory_uri(); ?>/image/burg_avocado.jpg" > -->
                                      <?php the_post_thumbnail('medium'); ?>
                                      <div class="c-menu_content">
                                         <h3 class="c-menu_title">
@@ -43,7 +43,7 @@
                                             </li>
                                         </ul>
                                         <div class="wrap_detail">
-                                                <a href="#" class="c-menu_detail">詳しく見る</a>
+                                                <a href="<?php the_permalink() ?>" class="c-menu_detail">詳しく見る</a>
                                         </div>
                                      </div>
                         　　　　　</li>
@@ -57,10 +57,12 @@
 
                     <?php if($wp_query->max_num_pages>1):?>
                     <ul class="p-pagenation">
-                        <li class="prevpostslink"><?php next_posts_link('Prev');?></li>
-                        <li class="nextpostslink"><?php previous_posts_link('Next');?></li>
+                        <li class="prevpostslink"><?php next_posts_link('＜＜前へ');?></li>
+                        <li class="nextpostslink"><?php previous_posts_link('次へ＞＞');?></li>
                     </ul>
                     <?php endif;?>
+  
+ 
 
         </article>
 

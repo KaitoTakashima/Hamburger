@@ -32,3 +32,73 @@ function wpbeg_script() {
     //get_template_directory_uri() テーマディレクトリのURIを取得
 }
 add_action('wp_enqueue_scripts','wpbeg_script');
+
+function wpbeg_widgets_init(){
+    register_sidebar(
+        array(
+            'name'       => 'カテゴリーウィジェット',
+            'id'         => 'category_widget',
+            'description'=> 'カテゴリー用ウィジェットです',
+            'after_widget' =>'</div>',
+            'before_title'  => '<h2><i class="fa fa-folder-open" aria-hidden="true"></i>',
+            'after_title'   => "</h2>\n",
+        )
+    );
+}
+add_action('widgets_init','wpbeg_widgets_init');
+
+function add_post_type() {
+    //カスタム投稿タイプ「キャンペーン」
+
+    register_post_type(' campaign ',
+    array(
+        'labels' => array(
+        'name'   => 'キャンペーン',
+        'singular_name' => 'キャンペーン',
+        'all_items'     => 'キャンペーン一覧'
+        ),
+        'public' => true, //一般に公開する
+        'menu_position' => 5,
+        'menu_icon' => 'dashicons-admin-customizer',  //アイコン画像
+        'supports'  => array('title','editor','thumbnail','custom-fields','excerpt','trackbacks','comments','revisions','page-attributes'),
+        'has_archive' => true,//アーカイブを表示
+        'show_in_rest' => true,
+    )
+    );
+}
+add_action('init','add_post_type');
+
+function add_taxonomies(){
+    //キャンペーンカテゴリー
+    register_taxonomy('campaign_cat',
+        array('campaign'),  //作成したカスタム投稿の名前に
+        array(
+            'label' => 'キャンペーンカテゴリー',    //表示名
+            'public' => true,
+            'show_in_menu' => true,
+            'show_ui' => true,
+            'show_admin_column' => true,
+            'hierarchical' => true, //trueはカテゴリー、falseはタグ
+            'rewrite' => array('slug' => 'campaign_cat', 'with_front' => true,), //パーマリンクの設定
+            'show_in_rest' => true,
+            'rest_base' => "",
+        )
+    );
+
+    //キャンペーンタグ
+    register_taxonomy('campaign_tag',
+        array('campaign'),
+        array(
+            'label' => 'キャンペーンタグ',    //表示名
+            'public' => true,
+            'show_in_menu' => true,
+            'show_ui' => true,
+            'show_admin_column' => true,
+            'hierarchical' => true, //trueはカテゴリー、falseはタグ
+            'rewrite' => array('slug' => 'campaign_tag', 'with_front' => true,), //パーマリンクの設定
+            'show_in_rest' => true,
+            'rest_base' => "",
+        )
+    );
+}
+add_action('init','add_taxonomies',0);
